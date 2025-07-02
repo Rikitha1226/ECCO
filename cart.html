@@ -3,42 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - EcoShop</title>
+    <title>EcoShop - Sustainable Living</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="logo-container">
                 <a href="index.html">
-                    <img src="images/logo.png" alt="EcoShop Logo">
+                    <img src="logo.png" alt="EcoShop Logo" class="logo">
                 </a>
             </div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#kitchen">Kitchen</a>
-                <a href="#stationery">Stationery</a>
-                <a href="#kids">Kids</a>
-                <a href="#women">Women</a>
-                <a href="#men">Men</a>
-                <a href="#pets">Pets</a>
-                <a href="#home-appliances">Home Appliances</a>
-                <a href="#sanitization">Sanitization</a>
+            
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="search" placeholder="Search eco-friendly products..." aria-label="Search">
+                    <button type="submit" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <div class="search-suggestions"></div>
             </div>
-            <div class="nav-icons">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search products...">
-                    <button><i class="fas fa-search"></i></button>
+
+            <div class="header-actions">
+                <!-- Account Dropdown -->
+                <div class="account-dropdown">
+                    <button class="account-btn" aria-haspopup="true" aria-expanded="false" aria-label="Account">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Account</span>
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                    <ul class="account-menu" aria-label="Account menu">
+                        <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="orders.html"><i class="fas fa-box"></i> Orders</a></li>
+                        <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
                 </div>
-                <div class="cart-icon">
-                    <a href="cart.html">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                </div>
+                <!-- Dark mode toggle (icon only, no background) -->
+                <button id="theme-switch" class="theme-switch" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Cart -->
+                <a href="cart.html" class="cart-link" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
             </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="category-links">
+                <li><a href="shop.html?category=kitchen">Kitchen</a></li>
+                <li><a href="shop.html?category=stationery">Stationery</a></li>
+                <li><a href="shop.html?category=kids">Kids</a></li>
+                <li><a href="shop.html?category=women">Women</a></li>
+                <li><a href="shop.html?category=men">Men</a></li>
+                <li><a href="shop.html?category=pets">Pets</a></li>
+                <li><a href="shop.html?category=home">Home Appliances</a></li>
+                <li><a href="shop.html?category=sanitization">Sanitization</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -71,26 +96,120 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="newsletter">
-                <h3>Subscribe to our Newsletter</h3>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit">Subscribe</button>
-                </form>
+            <!-- Navigation Section -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="shop.html" class="dropdown-toggle">Shop by Category</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html?category=kitchen">Kitchen</a></li>
+                            <li><a href="shop.html?category=stationery">Stationery</a></li>
+                            <li><a href="shop.html?category=kids">Kids</a></li>
+                            <li><a href="shop.html?category=women">Women</a></li>
+                            <li><a href="shop.html?category=men">Men</a></li>
+                            <li><a href="shop.html?category=home">Home Appliances</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="blog.html">Sustainability Blog</a></li>
+                    <li><a href="track-order.html">Track Order</a></li>
+                </ul>
             </div>
-            <div class="contact-form">
-                <h3>Contact Us</h3>
-                <form id="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+
+            <!-- Customer Service Section -->
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-headset"></i>
+                        <div class="contact-info">
+                            <strong>Customer Support</strong>
+                            <a href="tel:+18001234567">+1 800 123 4567</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-info">
+                            <strong>Email Us</strong>
+                            <a href="mailto:support@eco-shop.com">support@eco-shop.com</a>
+                        </div>
+                    </li>
+                    <li><a href="shipping.html"><i class="fas fa-truck"></i>Shipping & Returns</a></li>
+                    <li><a href="refund.html"><i class="fas fa-undo"></i>Refund Policy</a></li>
+                    <li><a href="gift-cards.html"><i class="fas fa-gift"></i>Gift Cards</a></li>
+                    <li><a href="#" class="live-chat-btn"><i class="fas fa-comments"></i>Live Chat</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Information Section -->
+            <div class="footer-column">
+                <h3>Legal Information</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="cookies.html">Cookie Policy</a></li>
+                    <li><a href="sustainability.html">Sustainability Commitment</a></li>
+                </ul>
+                <div class="eco-certifications">
+                    <h4>Certifications</h4>
+                    <div class="cert-badges">
+                        <img src="images/eco-cert.png" alt="Eco-Friendly Certification">
+                        <img src="images/sustainable-cert.png" alt="Sustainability Certification">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media & Newsletter Section -->
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <p class="social-text">Follow us for eco-friendly tips and updates!</p>
+                <div class="social-links">
+                    <a href="#" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="newsletter-signup">
+                    <h4>Join Our Green Community</h4>
+                    <p class="newsletter-text">Get eco-friendly tips and exclusive offers!</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p>&copy; 2024 EcoShop. All rights reserved.</p>
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p class="copyright">&copy; 2024 EcoShop. All rights reserved.</p>
+                    <p class="eco-cert">Certified Eco-Friendly Business</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa" aria-label="Visa"></i>
+                        <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
+                        <i class="fab fa-cc-amex" aria-label="American Express"></i>
+                        <i class="fab fa-cc-paypal" aria-label="PayPal"></i>
+                        <i class="fab fa-google-pay" aria-label="Google Pay"></i>
+                        <i class="fas fa-money-bill-wave" aria-label="Cash on Delivery"></i>
+                        <i class="fab fa-apple-pay" aria-label="Apple Pay"></i>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- Add before closing footer tag -->
+        <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </footer>
 
     <script src="script.js"></script>
